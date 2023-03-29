@@ -35,6 +35,7 @@ Step::Step(const Job& job, const UserDuration setup, const Amount& load)
     service(utils::scale_to_user_duration(job.service)),
     load(load),
     description(job.description),
+    time_limited(job.time_limited),
     waiting_time(0) {
 }
 

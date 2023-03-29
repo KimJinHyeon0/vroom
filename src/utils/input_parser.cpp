@@ -472,11 +472,7 @@ inline Job get_job(const rapidjson::Value& json_job, unsigned amount_size) {
              get_priority(json_job),
              get_time_windows(json_job),
              get_string(json_job, "description"),
-<<<<<<< HEAD
              get_string(json_job, "time_limited")
-=======
-             get_string(json_job, "time_limited"),
->>>>>>> 340814e0433586f04f83320d0f306491713d3fd6
              );
 }
 

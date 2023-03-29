@@ -115,6 +115,13 @@ rapidjson::Document to_json(const Solution& sol, bool geometry) {
                                           allocator);
       }
 
+      if (!job.time_limited.empty()) {
+        json_job.AddMember("time_limited", rapidjson::Value(), allocator);
+        json_job["time_limited"].SetString(job.time_limited.c_str(),
+                                          job.time_limited.size(),
+                                          allocator);
+      }
+
       json_unassigned.PushBack(json_job, allocator);
     }
 
@@ -305,6 +312,13 @@ rapidjson::Value to_json(const Step& s,
     json_step.AddMember("description", rapidjson::Value(), allocator);
     json_step["description"].SetString(s.description.c_str(),
                                        s.description.size(),
+                                       allocator);
+  }
+
+  if (!s.time_limited.empty()) {
+    json_step.AddMember("time_limited", rapidjson::Value(), allocator);
+    json_step["time_limited"].SetString(s.time_limited.c_str(),
+                                       s.time_limited.size(),
                                        allocator);
   }
 

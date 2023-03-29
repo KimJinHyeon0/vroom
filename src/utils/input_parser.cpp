@@ -471,7 +471,9 @@ inline Job get_job(const rapidjson::Value& json_job, unsigned amount_size) {
              get_skills(json_job),
              get_priority(json_job),
              get_time_windows(json_job),
-             get_string(json_job, "description"));
+             get_string(json_job, "description"),
+             get_string(json_job, "time_limited")
+             );
 }
 
 template <class T> inline Matrix<T> get_matrix(rapidjson::Value& m) {
@@ -574,7 +576,9 @@ void parse(Input& input, const std::string& input_str, bool geometry) {
                  skills,
                  priority,
                  get_time_windows(json_pickup),
-                 get_string(json_pickup, "description"));
+                 get_string(json_pickup, "description"),
+                 get_string(json_pickup, "time_limited")
+                 );
 
       // Defining delivery job.
       auto& json_delivery = json_shipment["delivery"];
@@ -589,7 +593,9 @@ void parse(Input& input, const std::string& input_str, bool geometry) {
                    skills,
                    priority,
                    get_time_windows(json_delivery),
-                   get_string(json_delivery, "description"));
+                   get_string(json_delivery, "description"),
+                   get_string(json_delivery, "time_limited")
+                   );
 
       input.add_shipment(pickup, delivery);
     }

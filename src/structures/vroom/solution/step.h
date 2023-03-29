@@ -28,6 +28,7 @@ struct Step {
   UserDuration service;
   const Amount load;
   const std::string description;
+  const std::string time_limited;
 
   UserDuration arrival;
   UserDuration duration;

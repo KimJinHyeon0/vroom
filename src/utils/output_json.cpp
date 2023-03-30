@@ -206,6 +206,29 @@ rapidjson::Value to_json(const Route& route,
                                         allocator);
   }
 
+  if (!route.driver_id.empty()) {
+    json_route.AddMember("driver_id", rapidjson::Value(), allocator);
+    json_route["driver_id"].SetString(route.driver_id.c_str(),
+                                        route.driver_id.size(),
+                                        allocator);
+  }
+
+
+  if (!route.driver_name.empty()) {
+    json_route.AddMember("driver_name", rapidjson::Value(), allocator);
+    json_route["driver_name"].SetString(route.driver_name.c_str(),
+                                        route.driver_name.size(),
+                                        allocator);
+  }
+
+
+  if (!route.driver_type.empty()) {
+    json_route.AddMember("driver_type", rapidjson::Value(), allocator);
+    json_route["driver_type"].SetString(route.driver_type.c_str(),
+                                        route.driver_type.size(),
+                                        allocator);
+  }
+
   if (route.delivery.size() > 0) {
     rapidjson::Value json_delivery(rapidjson::kArrayType);
     for (std::size_t i = 0; i < route.delivery.size(); ++i) {

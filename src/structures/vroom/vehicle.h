@@ -52,6 +52,9 @@ struct Vehicle {
   const TimeWindow tw;
   const std::vector<Break> breaks;
   const std::string description;
+  const std::string driver_id;
+  const std::string driver_name;
+  const std::string driver_type;
   const VehicleCosts costs;
   CostWrapper cost_wrapper;
   size_t max_tasks;
@@ -70,6 +73,9 @@ struct Vehicle {
     const TimeWindow& tw = TimeWindow(),
     const std::vector<Break>& breaks = std::vector<Break>(),
     const std::string& description = "",
+      const std::string& driver_id = "",
+    const std::string& driver_name = "",
+    const std::string& driver_type = "",
     const VehicleCosts& costs = VehicleCosts(),
     double speed_factor = 1.,
     const size_t max_tasks = std::numeric_limits<size_t>::max(),

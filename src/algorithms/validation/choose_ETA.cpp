@@ -1425,6 +1425,9 @@ Route choose_ETA(const Input& input,
                sum_pickups,
                v.profile,
                v.description,
+               v.driver_id,
+               v.driver_name,
+               v.driver_type,
                std::move(
                  Violations(user_lead_time, user_delay, std::move(v_types))));
 }

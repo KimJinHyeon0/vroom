@@ -552,7 +552,11 @@ inline Solution format_solution(const Input& input,
                         sum_deliveries,
                         sum_pickups,
                         v.profile,
-                        v.description);
+                        v.description,
+                        v.driver_id,
+                        v.driver_name,
+                        v.driver_type
+                        );
   }
 
   // Handle unassigned jobs.
@@ -1020,7 +1024,11 @@ inline Route format_route(const Input& input,
                sum_deliveries,
                sum_pickups,
                v.profile,
-               v.description);
+               v.description,
+               v.driver_id,
+               v.driver_name,
+               v.driver_type
+               );
 }
 
 inline Solution format_solution(const Input& input,

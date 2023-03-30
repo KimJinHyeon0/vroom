@@ -30,6 +30,9 @@ struct Route {
   Amount pickup;
   std::string profile;
   std::string description;
+  std::string driver_id;
+  std::string driver_name;
+  std::string driver_type;
   Violations violations;
 
   std::string geometry;
@@ -49,6 +52,9 @@ struct Route {
         const Amount& pickup,
         const std::string& profile,
         const std::string& description,
+        const std::string& driver_id,
+        const std::string& driver_name,
+        const std::string& driver_type,
         const Violations&& violations = Violations(0, 0));
 
   void check_timing_consistency() const;

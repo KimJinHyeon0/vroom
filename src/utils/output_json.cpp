@@ -114,6 +114,20 @@ rapidjson::Document to_json(const Solution& sol, bool geometry) {
                                           job.description.size(),
                                           allocator);
       }
+      
+      if (!job.delivery_id.empty()) {
+        json_job.AddMember("delivery_id", rapidjson::Value(), allocator);
+        json_job["delivery_id"].SetString(job.delivery_id.c_str(),
+                                          job.delivery_id.size(),
+                                          allocator);
+      }
+
+      if (!job.location_id.empty()) {
+        json_job.AddMember("location_id", rapidjson::Value(), allocator);
+        json_job["location_id"].SetString(job.location_id.c_str(),
+                                          job.location_id.size(),
+                                          allocator);
+      }
 
       if (!job.time_limited.empty()) {
         json_job.AddMember("time_limited", rapidjson::Value(), allocator);
@@ -335,6 +349,20 @@ rapidjson::Value to_json(const Step& s,
     json_step.AddMember("description", rapidjson::Value(), allocator);
     json_step["description"].SetString(s.description.c_str(),
                                        s.description.size(),
+                                       allocator);
+  }
+
+  if (!s.delivery_id.empty()) {
+    json_step.AddMember("delivery_id", rapidjson::Value(), allocator);
+    json_step["delivery_id"].SetString(s.delivery_id.c_str(),
+                                       s.delivery_id.size(),
+                                       allocator);
+  }
+
+  if (!s.location_id.empty()) {
+    json_step.AddMember("location_id", rapidjson::Value(), allocator);
+    json_step["location_id"].SetString(s.location_id.c_str(),
+                                       s.location_id.size(),
                                        allocator);
   }
 

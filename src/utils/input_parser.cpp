@@ -475,6 +475,8 @@ inline Job get_job(const rapidjson::Value& json_job, unsigned amount_size) {
              get_priority(json_job),
              get_time_windows(json_job),
              get_string(json_job, "description"),
+             get_string(json_job, "delivery_id"),
+             get_string(json_job, "location_id"),
              get_string(json_job, "time_limited")
              );
 }
@@ -580,6 +582,8 @@ void parse(Input& input, const std::string& input_str, bool geometry) {
                  priority,
                  get_time_windows(json_pickup),
                  get_string(json_pickup, "description"),
+                 get_string(json_pickup, "delivery_id"),
+                 get_string(json_pickup, "location_id"),
                  get_string(json_pickup, "time_limited")
                  );
 
@@ -597,6 +601,8 @@ void parse(Input& input, const std::string& input_str, bool geometry) {
                    priority,
                    get_time_windows(json_delivery),
                    get_string(json_delivery, "description"),
+                   get_string(json_delivery, "delivery_id"),
+                   get_string(json_delivery, "location_id"),
                    get_string(json_delivery, "time_limited")
                    );
 

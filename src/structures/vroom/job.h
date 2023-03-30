@@ -31,6 +31,8 @@ struct Job {
   const Priority priority;
   const std::vector<TimeWindow> tws;
   const std::string description;
+  const std::string delivery_id;
+  const std::string location_id;
   const std::string time_limited;
   const Duration tw_length;
 
@@ -46,6 +48,8 @@ struct Job {
       const std::vector<TimeWindow>& tws =
         std::vector<TimeWindow>(1, TimeWindow()),
       const std::string& description = "",
+      const std::string& delivery_id = "",
+      const std::string& location_id = "",
       const std::string& time_limited = ""
       );
 
@@ -62,6 +66,8 @@ struct Job {
       const std::vector<TimeWindow>& tws =
         std::vector<TimeWindow>(1, TimeWindow()),
       const std::string& description = "",
+      const std::string& delivery_id = "",
+      const std::string& location_id = "",
       const std::string& time_limited = ""
 );
 

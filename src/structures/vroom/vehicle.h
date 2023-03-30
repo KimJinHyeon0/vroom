@@ -73,7 +73,7 @@ struct Vehicle {
     const TimeWindow& tw = TimeWindow(),
     const std::vector<Break>& breaks = std::vector<Break>(),
     const std::string& description = "",
-      const std::string& driver_id = "",
+    const std::string& driver_id = "",
     const std::string& driver_name = "",
     const std::string& driver_type = "",
     const VehicleCosts& costs = VehicleCosts(),
